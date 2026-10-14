@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Last Train</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+
+  <div id="header">
+    <h1>LAST TRAIN</h1>
+    <p>Coin: <span id="coin">no</span> &nbsp;|&nbsp; Called a friend: <span id="called">no</span> &nbsp;|&nbsp; Key: <span id="key">no</span></p>
+    <audio src="audio/ambience.mp3" controls loop></audio>
+  </div>
+
+  <div class="container">
+
+    <div class="scene" id="scene1">
+      <h2>1. The Platform</h2>
+      <img src="images/platform.svg" alt="empty train platform at night">
+      <p id="text1">You just missed the last train home. Your phone is dead and it's raining. You need to find a way out.</p>
+      <div class="buttons">
+        <button onclick="checkBench()">Check the bench</button>
+        <button onclick="goTo(2)">Go to the payphone</button>
+        <button onclick="goTo(3)">Go to the exit</button>
+      </div>
+    </div>
+
+    <div class="scene" id="scene2">
+      <h2>2. The Payphone</h2>
+      <img src="images/phone.svg" alt="old payphone">
+      <p id="text2">An old payphone. It needs a coin.</p>
+      <div class="buttons">
+        <button onclick="callFriend()">Call a friend</button>
+        <button onclick="goTo(1)">Back to the platform</button>
+      </div>
+    </div>
+
+    <div class="scene" id="scene3">
+      <h2>3. The Exit</h2>
+      <img src="images/platform-end.svg" alt="exit stairs with a gate">
+      <p id="text3">The exit gate is locked for the night. There's a light on in the staff office.</p>
+      <div class="buttons">
+        <button onclick="openGate()">Open the gate</button>
+        <button onclick="goTo(4)">Knock on the office</button>
+        <button onclick="goTo(1)">Back to the platform</button>
+      </div>
+    </div>
+
+    <div class="scene" id="scene4">
+      <h2>4. The Office</h2>
+      <img src="images/room.svg" alt="staff office">
+      <p id="text4">A tired station worker opens the door. "We're closed," he says.</p>
+      <div class="buttons">
+        <button onclick="askForKey()">Ask for help</button>
+        <button onclick="goTo(3)">Back to the exit</button>
+      </div>
+    </div>
+
+    <div class="scene" id="scene5">
+      <h2 id="endingTitle">5. The End</h2>
+      <img id="endingImg" src="images/ending-escape.svg" alt="ending">
+      <p id="endingText"></p>
+      <div class="buttons">
+        <button onclick="restart()">Play again</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="footer">
+    <p>CCT 360 · The Curious Case · Hassan Shakoor, Mujtaba Malik, Yousuf Dhannoon</p>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
